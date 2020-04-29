@@ -9,17 +9,17 @@ fieldset > input {
 fieldset {
 	text-align: center;
 	margin: 0 auto;
-	max-width: 500px;
+	max-width: 80%;
 	max-height: 500px;
 }
 
 .box {
 	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
-	padding: 0 1rem;
+	padding: 1rem 1rem;
 	margin: 2rem auto;
 	display: flex;
-	width: 80%;
-	border: 1px solid #999;
+	max-width: 80%;
+	
 
 }
 
@@ -29,10 +29,10 @@ fieldset {
 	margin: 0 auto;
 	text-align: center;
 	width: 100%;
-	border: 1px solid #999;
+	border: 1px solid #f1f1f1;
 }
 
 table > th, td{
 	padding: 4px;
-	border: 1px solid #999;
+	border: 1px solid #f1f1f1;
 }
