@@ -18,7 +18,7 @@ fieldset {
 	padding: 0 1rem;
 	margin: 2rem auto;
 	display: flex;
-	max-width: 600px;
+	width: 80%;
 	border: 1px solid #999;
 
 }
@@ -28,7 +28,7 @@ fieldset {
 	padding: 5px;
 	margin: 0 auto;
 	text-align: center;
-	width: 300px;
+	width: 100%;
 	border: 1px solid #999;
 }
 
