@@ -25,9 +25,8 @@ fieldset {
 
 .box > table {
 	border-collapse: collapse;
-	padding: 5px;
+	padding: 8px;
 	margin: 0 auto;
-	text-align: center;
 	width: 100%;
 	border: 1px solid #f1f1f1;
 }
