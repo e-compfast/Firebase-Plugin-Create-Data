@@ -8,15 +8,17 @@ var tabel_c = $("#tabel_c");
 //==================++++++++++++++++++++++++++++++++++=======================
 
  	$("#validasiData").click( e=> {
+ 		
  	if (setData.val() == "" || setData.val() == null) {
  		$("#validasiData").show();
- 		$("#lihatData").hide();
- 		console.log("Ops database Kosong!");
+ 		console.log("Ops Nama_Database Kosong!");
+ 		$(".statusMsg").html("Masukan nama database!");
  	}  else if (setData.val() != "" || setData.val() != null){
- 		console.log("Ok nama data siap!");
- 		$("#validasiData").hide();
  		$("#lihatData").show();
- 		$("#setData_input").prop("disable", true);
+ 		console.log("Ok nama data siap!");
+ 		$(".statusMsg").html("Nama database siap digunakan!");
+ 		$("#validasiData").hide();
+ 		$("#setData_input").prop("disabled", true);
 
 	 	var setFix = setData.val();
 		const namaData = "/" + setFix;
@@ -29,12 +31,17 @@ var tabel_c = $("#tabel_c");
 		var cekUlangNamaData = $("#setData_input").val();
 		if(cekUlangNamaData == "" || cekUlangNamaData == null){
 			console.log("Ops! Nama data kosong!");
+			$(".statusMsg").html("Ops! Nama data kosong!");
 		} if(cekUlangNamaData != setFix) {
-			console.log("Ops! Nama data kamu berubah!");
+			console.log("Ops! data berubah silahkan tekan refresh!");
+			$(".statusMsg").html("Silahkan tekan refresh!");
+			$("#buatData").hide();
+			$("#displayData").hide();
 		} else {
 
 			if(setFix == "" || setFix == null) {
-				console.log("Nama data wajib diisi!");
+				console.log("Data wajib diisi!");
+				$(".statusMsg").html("Data wajib diisi!");
 			} else {
 			// GANTI STRUKTUR DATABASE
 		  skopRef.push(
@@ -45,6 +52,7 @@ var tabel_c = $("#tabel_c");
 		      }
 		  );
 		  console.log("Data "+ setFix +" berhasil disimpan!");
+		  $(".statusMsg").html("Data "+setFix+" berhasil disimpan!");
 			}
 		}
 
@@ -59,20 +67,26 @@ var tabel_c = $("#tabel_c");
 		} else {
 
 		 if (setFix == "" || setFix == null){
-		 	console.log("Nama data kosong tekan refresh untuk ulangi!");
-		 		$("#lihatData").hide();
+		 	console.log("Data kosong refresh untuk ulangi!");
 		 		} if (setFix != "" || setFix != null){
-		 			$("#lihatData").show();
+		 			
 				dbRef.child(setFix).on("value", persiapan => {
 						 var cekData = persiapan.val();
-					 
+						 //console.log(cekData);
+					 	
 						if (cekData == null){
 							console.log("Tidak ditemukan data");
+							$(".statusMsg").html("Tidak ada data!");
 							$("#data").html("");
+							$("#tulisData").html("Buat Data");
+
 
 						} if (cekData != null) {
 							console.log("Data ditemukan!");
+							$(".statusMsg").html("Data lama ditemukan!");
 							// console.log(cekData);
+							$("#tulisData").html("Tambah Data");
+							
 						} 
 						$("#headTab").html("");
 						$("#bodyTab").html("");
@@ -81,15 +95,25 @@ var tabel_c = $("#tabel_c");
 							const kunci = baca.key;
 							const nilai = baca.val();
 							//kode eksekusi
-							var tableHead = "<tr><th>A</th><th>B</th><th>C</th></tr>";
-							var tableData = "<tr><td data-id="+kunci+">"+nilai.a+"</td><td>"+nilai.b+"</td><td>"+nilai.c+"</td></tr>";
+							var tableHead = "<tr><th>A</th><th>B</th><th>C</th><th></th></tr>";
+							var tableData = "<tr><td id='k' data-id="+kunci+">"+nilai.a+"</td><td>"+nilai.b+"</td><td>"+nilai.c+"</td><td id='hapusData'>X</td</tr>";
 							console.log(nilai);
 							$("#headTab").html(tableHead);
 							$("#bodyTab").append(tableData);
 
+						}); // parameter baca =>
 
-						});
-					});
+						$("#hapusData").click(e=>{
+						e.preventDefault();
+
+						var data_key = $("#k").attr("data-id");
+						alert(data_key);
+
+						dbRef.child(setFix+"/"+data_key).remove();
+
+						}); // Tombol Hapus data
+
+					}); // Parameter Persiapan =>
 				}
 
 			} // else

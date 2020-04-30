@@ -12,21 +12,22 @@
 <body>
 <div class="wrapper">
 		<div class="box">
-			<fieldset>
+			<fieldset id="headerData">
 				<legend>NAMA DATABASE</legend>
 				<input type="text" name="setData" id="setData_input" placeholder="Nama_Database"/>
 				<button id="validasiData">Validasi</button> <button id="refreshData">Refresh</button>
 				<button id="lihatData">Lihat Data</button>
 			</fieldset>
-			<fieldset>
-				<legend>DATA ORDER</legend>
+			<div class="statusMsg"></div>
+			<fieldset id="buatData">
+				<legend>FORM DATABASE</legend>
 				<input type="text" id="tabel_a" placeholder="Tabel A" />
 				<input type="email" id="tabel_b" placeholder="Tabel B"/>
 				<input type="text" id="tabel_c" placeholder="Tabel C"/>
 				<button id="tulisData">Buat Database</button>
 			</fieldset>
-			<fieldset>
-				<legend>DISPLAY DATA</legend>
+			<fieldset id="displayData">
+				<legend>STATUS DATABASE</legend>
 				<div class="overflow">
 					<table>
 						<thead id="headTab"></thead>

@@ -1,3 +1,15 @@
+#buatData {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	background: #fff;
+}
+.statusMsg {
+	text-align: center;
+	margin-top: 0.5rem;
+
+	color: green;
+}
+
 #lihatData {
 	display: none;
 }
@@ -7,7 +19,7 @@ fieldset > input {
 	width: 80%;
 	display: flex;
 	margin-bottom: 5px;
-	border: 1px outset #f1f1f1;
+	border: 2px outset #f1f1f1;
 }
 
 fieldset {
@@ -62,4 +74,8 @@ td, th {
 		max-width: 320px;
 		overflow-x: auto
 	}
+}
+
+button {
+	padding: 8px;
 }
