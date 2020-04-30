@@ -1,0 +1,65 @@
+#lihatData {
+	display: none;
+}
+fieldset > input {
+	margin: 0 auto;
+	padding: 0.5rem;
+	width: 80%;
+	display: flex;
+	margin-bottom: 5px;
+	border: 1px outset #f1f1f1;
+}
+
+fieldset {
+	text-align: center;
+	max-width: 520px;
+	border-radius: 0;
+	border: 1px solid #999;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+
+}
+
+.box {
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+	padding: 1rem 1rem;
+	margin: 0 auto;
+	width: 520px;
+	border: 1px solid #f1f1f1;
+	align-items: center;
+}
+
+.overflow {
+	overflow-x: auto;
+	margin: 0 auto;
+	max-width: 100%;
+}
+/* 
+Generic Styling, for Desktops/Laptops 
+*/
+table { 
+  border-collapse: collapse;
+  margin: 0 auto;
+  width: 100%
+}
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+  background: #eee;
+}
+th { 
+  background: #333; 
+  color: white; 
+  font-weight: bold;
+  text-align: center; 
+}
+td, th { 
+  padding: 6px; 
+  border: 1px solid #ccc; 
+  text-align: left; 
+}
+
+@media only sreen and (width: 360px){
+	.overflow {
+		max-width: 320px;
+		overflow-x: auto
+	}
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tulis Data</title>
+	<meta name="viewport" content="width=device-width"/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script>
+	<script src="js/config.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/app.css"/>
+</head>
+<body>
+<div class="wrapper">
+		<div class="box">
+			<fieldset>
+				<legend>NAMA DATABASE</legend>
+				<input type="text" name="setData" id="setData_input" placeholder="Nama_Database"/>
+				<button id="validasiData">Validasi</button> <button id="refreshData">Refresh</button>
+				<button id="lihatData">Lihat Data</button>
+			</fieldset>
+			<fieldset>
+				<legend>DATA ORDER</legend>
+				<input type="text" id="tabel_a" placeholder="Tabel A" />
+				<input type="email" id="tabel_b" placeholder="Tabel B"/>
+				<input type="text" id="tabel_c" placeholder="Tabel C"/>
+				<button id="tulisData">Buat Database</button>
+			</fieldset>
+			<fieldset>
+				<legend>DISPLAY DATA</legend>
+				<div class="overflow">
+					<table>
+						<thead id="headTab"></thead>
+						<tbody id="bodyTab"></tbody>
+					</table>
+				</div>
+			</fieldset>
+		</div>
+</div>
+<script src="js/plugin.js"></script>
+</body>
+</html>
